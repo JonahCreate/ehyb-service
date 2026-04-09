@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>這就是品牌｜服務方案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8521A;
+    --black: #1A1A1A;
+    --cream: #F5F0E8;
+    --cream-dark: #EDE5D8;
+    --white: #FAFAF7;
+    --gray: #8A8278;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--black);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+  }
+
+  .brand-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--orange);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 100px 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+    color: var(--black);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--orange);
+    margin: 40px auto;
+  }
+
+  /* SERVICES GRID */
+  .services {
+    padding: 20px 40px 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* SERVICE CARD */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 52px 48px 48px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(26,26,26,0.08);
+  }
+
+  .card-free {
+    background: var(--black);
+    border-color: var(--black);
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .card-free .card-content {
+    padding: 52px 52px 52px 52px;
+  }
+
+  .card-free .card-side {
+    background: var(--orange);
+    padding: 52px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .card-free .card-tag {
+    color: var(--cream);
+    opacity: 0.7;
+  }
+
+  .card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    color: var(--black);
+  }
+
+  .card-free .card-title {
+    color: var(--cream);
+    font-size: 30px;
+  }
+
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--orange);
+    margin: 20px 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .card-free .card-price {
+    color: var(--cream);
+    font-size: 48px;
+  }
+
+  .card-price-note {
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+
+  .card-free .card-price-note {
+    color: var(--cream);
+    opacity: 0.6;
+  }
+
+  .card-divider {
+    width: 30px;
+    height: 1px;
+    background: var(--cream-dark);
+    margin: 0 0 28px;
+  }
+
+  .card-free .card-divider {
+    background: rgba(245,240,232,0.2);
+  }
+
+  .card-desc {
+    font-size: 14px;
+    line-height: 2;
+    color: #4A4540;
+    margin-bottom: 28px;
+  }
+
+  .card-free .card-desc {
+    color: rgba(245,240,232,0.8);
+  }
+
+  /* WHAT YOU GET */
+  .gets-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .card-free .gets-title {
+    color: rgba(245,240,232,0.5);
+  }
+
+  .gets-list {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+
+  .gets-list li {
+    font-size: 14px;
+    color: #4A4540;
+    padding: 6px 0 6px 20px;
+    position: relative;
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(26,26,26,0.05);
+  }
+
+  .gets-list li:last-child { border-bottom: none; }
+
+  .gets-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-size: 8px;
+    top: 10px;
+  }
+
+  .card-free .gets-list li {
+    color: rgba(245,240,232,0.8);
+    border-bottom-color: rgba(245,240,232,0.08);
+  }
+
+  .card-free .gets-list li::before {
+    color: var(--cream);
+    opacity: 0.4;
+  }
+
+  /* DIFF badge for single session */
+  .diff-note {
+    background: rgba(232,82,26,0.08);
+    border-left: 2px solid var(--orange);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--orange);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  /* SIDE CONTENT */
+  .card-side-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .card-side-list {
+    list-style: none;
+  }
+
+  .card-side-list li {
+    font-size: 14px;
+    color: var(--black);
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(26,26,26,0.12);
+    line-height: 1.7;
+  }
+
+  .card-side-list li:last-child { border-bottom: none; }
+
+  .card-side-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    top: 10px;
+    color: var(--black);
+  }
+
+  /* LADDER */
+  .ladder {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+  }
+
+  .ladder-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+    display: block;
+    text-align: center;
+  }
+
+  .ladder-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    overflow: hidden;
+  }
+
+  .step {
+    flex: 1;
+    padding: 28px 28px 28px 32px;
+    border-right: 1px solid var(--cream-dark);
+    position: relative;
+  }
+
+  .step:last-child { border-right: none; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--orange);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .step-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--black);
+    display: block;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .step-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--orange);
+  }
+
+  .step-arrow {
+    width: 0;
+    height: 0;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    border-left: 14px solid var(--cream-dark);
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 60px;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-contact a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+
+  .footer-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(245,240,232,0.3);
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand-name">這就是品牌</div>
+    <div class="brand-sub">Exactly How You Brand</div>
+  </div>
+  <div style="text-align:right;">
+    <div style="font-size:12px;color:#8A8278;letter-spacing:0.1em;">100+ 品牌案例</div>
+    <div style="font-size:12px;color:#8A8278;letter-spacing:0.05em;">幫有料的人把自己說清楚</div>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="hero-label">服務方案總覽</span>
+  <h1>你不是沒有料。<br>只是還沒有人幫你<em>說清楚</em>。</h1>
+  <div class="divider"></div>
+  <p class="hero-desc">從免費體驗到完整陪跑，每一個服務都在做同一件事：幫你找到那條把所有東西串起來的線。</p>
+</section>
+
+<section class="services">
+
+  <!-- 兩天免費診斷 -->
+  <div class="card card-free">
+    <div class="card-content">
+      <span class="card-tag">入口體驗 ✦ 限量名額</span>
+      <div class="card-title">兩天品牌差異化診斷</div>
+      <div class="card-price">免費</div>
+      <div class="card-price-note">Jonah 邀請制。不是所有人都能進來。</div>
+      <div class="card-divider"></div>
+      <p class="card-desc">
+        兩天。兩次各 30 分鐘的通話。每天一個作業。<br>
+        不教方法。我問你問題，讓你說清楚自己。<br>
+        兩天結束，你知道你真正的切入點是什麼，還有你一直說不出口的那個立場在哪裡。
+      </p>
+      <span class="gets-title">你會帶走</span>
+      <ul class="gets-list">
+        <li>找到品牌真正的切入點（不是你以為的那個）</li>
+        <li>找到你一直在迴避說的那個觀點</li>
+        <li>知道你還有哪些層次沒被整理清楚</li>
+      </ul>
+    </div>
+    <div class="card-side">
+      <div class="card-side-title">這兩天<br>會發生什麼</div>
+      <ul class="card-side-list">
+        <li>Day 1 通話：我幫你拆開「切入點」和「終點」</li>
+        <li>Day 1 作業：寫出五個版本的品牌一句話</li>
+        <li>Day 2 通話：我從作業裡找到你在迴避的東西</li>
+        <li>Day 2 作業：寫出你真正相信的立場</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 單次品牌診斷 -->
+  <div class="card">
+    <span class="card-tag">單次深度診斷</span>
+    <div class="card-title">品牌診斷<br>單次諮詢</div>
+    <div class="card-price">NTD 2,000</div>
+    <div class="card-price-note">90 分鐘 ✦ 診斷報告隨附</div>
+    <div class="card-divider"></div>
+    <div class="diff-note">你主動帶著問題來。我在 90 分鐘內幫你看清楚問題真正在哪裡，給你一個可以立刻執行的方向。</div>
+    <span class="gets-title">你會帶走</span>
+    <ul class="gets-list">
+      <li>90 分鐘一對一深度診斷通話</li>
+      <li>診斷後的書面摘要報告</li>
+      <li>你品牌目前最大的一個盲點</li>
+      <li>一個具體的、今天就能執行的下一步</li>
+      <li>通話錄音永久保留</li>
+    </ul>
+    <p style="font-size:13px;color:#8A8278;line-height:1.8;">適合：已有一定方向，需要有人快速幫你診斷，找出真正的問題所在。</p>
+  </div>
+
+  <!-- 一週工作坊 -->
+  <div class="card">
+    <span class="card-tag">七天密集定位</span>
+    <div class="card-title">一週品牌定位<br>工作坊</div>
+    <div class="card-price">NTD 3,500</div>
+    <div class="card-price-note">升級加購 45 分鐘開頭通話 NTD 4,000</div>
+    <div class="card-divider"></div>
+    <p class="card-desc">七天。每天一個問題，LINE 傳給我，我直接回你。七天結束，你拿到一份品牌手冊雛形。裡面裝的是你整理清楚之後的自己。</p>
+    <span class="gets-title">你會帶走</span>
+    <ul class="gets-list">
+      <li>五天每日作業 + 工作日 24 小時內回饋</li>
+      <li>Day 4 由我提煉 2-3 個定位句讓你選</li>
+      <li>Day 6 完整品牌手冊雛形</li>
+      <li>Day 7 結尾 30 分鐘通話 + 錄音</li>
+      <li>你用自己的話說出來的定位方向</li>
+    </ul>
+  </div>
+
+  <!-- 八週陪跑 -->
+  <div class="card" style="grid-column: span 2; background: var(--cream-dark); border-color: rgba(232,82,26,0.2);">
+    <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start;">
+      <div>
+        <span class="card-tag">完整品牌建構</span>
+        <div class="card-title" style="font-size:32px;">八週品牌陪跑</div>
+        <div class="card-price" style="font-size:44px;">NTD 25,000</div>
+        <div class="card-price-note">八週 ✦ 每週一次策略通話 + 每日作業 + LINE 即時支援</div>
+        <div class="card-divider"></div>
+        <p class="card-desc" style="color:#4A4540;">
+          不是課程。是八週有人陪著你，一步一步走完從定位到表達到吸引對的人的整條路。<br><br>
+          你說話的方式會變。吸引來的人會變。對方聽完你說話之後的感覺，也會變。不是你變了，是你終於被正確理解了。
+        </p>
+      </div>
+      <div>
+        <span class="gets-title">八週包含什麼</span>
+        <ul class="gets-list" style="margin-bottom:0;">
+          <li>每週一次 30 分鐘 1:1 策略通話</li>
+          <li>每天一個作業，五天，週五看見週一的自己</li>
+          <li>工作日 LINE 即時支援，24 小時內回覆</li>
+          <li>專屬 Notion 學員空間，永久保留</li>
+          <li>每週配套學習資源</li>
+          <li>所有會議錄音，永久保留</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- 產品階梯 -->
+<section class="ladder">
+  <span class="ladder-title">你的路徑</span>
+  <div class="ladder-steps">
+    <div class="step">
+      <span class="step-num">Step 01</span>
+      <span class="step-name">兩天品牌<br>差異化診斷</span>
+      <span class="step-price">免費</span>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step">
+      <span class="step-num">Step 02</span>
+      <span class="step-name">單次品牌<br>診斷諮詢</span>
+      <span class="step-price">2,000</span>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step">
+      <span class="step-num">Step 03</span>
+      <span class="step-name">一週品牌<br>定位工作坊</span>
+      <span class="step-price">3,500</span>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step" style="background:var(--black);">
+      <span class="step-num" style="color:var(--orange);">Step 04</span>
+      <span class="step-name" style="color:var(--cream);">八週品牌<br>完整陪跑</span>
+      <span class="step-price" style="color:var(--orange);">25,000</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Jonah ✦ 這就是品牌</div>
+  <div class="footer-contact" style="margin-top:12px;">
+    LINE 私訊 &nbsp;｜&nbsp; <a href="mailto:gj.marketing0116@gmail.com">gj.marketing0116@gmail.com</a>
+  </div>
+  <div class="footer-note">幫有料的人，把自己說清楚。</div>
+</footer>
+
+</body>
+</html>
