@@ -1,0 +1,573 @@
+/* ============================================================
+   Coaching page — 八週品牌陪跑
+   Editorial long-form. Single-column narrative, pull-quote moments,
+   a week-by-week table as the spine, and a closing CTA.
+   Inherits tokens from colors_and_type.css. No gradients, no shadows,
+   no rounded corners, no emoji.
+   ============================================================ */
+
+.coach-page { background: var(--color-cream); color: var(--color-dark); }
+
+/* Narrative block — the single-column, generous-whitespace zine rhythm */
+.coach-narrative {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 4.5rem;
+}
+.coach-narrative > p {
+  margin: 0 0 1.6rem;
+  font-family: var(--font-display);
+  font-weight: var(--w-regular);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.85;
+  letter-spacing: .01em;
+  color: var(--color-dark);
+}
+.coach-narrative > p.lead {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.coach-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--color-primary);
+  margin: 2.8rem auto;
+  border: 0;
+  opacity: .55;
+}
+
+/* Hero */
+.coach-hero {
+  position: relative;
+  padding: 5.5rem 0 5rem;
+  background: var(--color-primary);
+  color: var(--color-cream);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(26, 16, 8, .15);
+}
+.coach-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.coach-hero .eyebrow {
+  color: rgba(245, 237, 227, .82);
+  display: inline-block;
+  margin: 0 0 1.4rem;
+}
+.coach-hero h1 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  line-height: 1.25;
+  letter-spacing: .02em;
+  margin: 0 0 1.6rem;
+  color: var(--color-cream);
+}
+.coach-hero h1 em {
+  font-style: normal;
+  position: relative;
+  white-space: nowrap;
+}
+.coach-hero h1 em::after {
+  content: ""; position: absolute;
+  left: 0; right: 0; bottom: -.06em;
+  height: 4px;
+  background: var(--color-cream);
+  opacity: .5;
+}
+.coach-hero .coach-hero-sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.8;
+  color: rgba(245, 237, 227, .92);
+  margin: 0 0 2.2rem;
+  font-weight: 400;
+}
+.coach-hero-meta {
+  display: inline-flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(245, 237, 227, .25);
+}
+.coach-hero-meta > div {
+  min-width: 8rem;
+  text-align: center;
+}
+.coach-hero-meta dt {
+  font-family: var(--font-accent);
+  font-size: .72rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 227, .65);
+  margin-bottom: .3rem;
+}
+.coach-hero-meta dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-cream);
+}
+.coach-hero-pencil {
+  position: absolute;
+  left: 5%; top: 12%;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: rgba(245, 237, 227, .7);
+  transform: rotate(-14deg);
+  pointer-events: none;
+  z-index: 1;
+}
+.coach-hero-glyph {
+  position: absolute;
+  right: -.08em; bottom: -.2em;
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: clamp(6rem, 38vw, 22rem);
+  line-height: .82;
+  color: rgba(245, 237, 227, .15);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Pull-quote moments */
+.coach-quote {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.coach-quote--orange { background: var(--color-primary); color: var(--color-cream); }
+.coach-quote--dark { background: var(--color-clay-deep); color: var(--color-cream); }
+.coach-quote--cream { background: var(--color-cream-dark); color: var(--color-dark); }
+.coach-quote blockquote {
+  max-width: 44rem;
+  margin: 0 auto 1.2rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  line-height: 1.65;
+  letter-spacing: .01em;
+  font-style: normal;
+}
+.coach-quote blockquote::before { content: "「"; }
+.coach-quote blockquote::after { content: "」"; }
+.coach-quote cite {
+  font-family: var(--font-accent);
+  font-size: .85rem;
+  letter-spacing: .18em;
+  text-transform: none;
+  font-style: italic;
+  color: currentColor;
+  opacity: .75;
+}
+
+/* Three-question band (代操 / 流量 / 人設) */
+.coach-qa {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.coach-qa-head {
+  max-width: 38rem;
+  margin: 0 auto 2.8rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.coach-qa-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: var(--w-bold);
+  line-height: 1.4;
+  margin: .4rem 0 0;
+}
+.coach-qa-grid {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+.coach-qa-card {
+  border-top: 1px solid rgba(122, 74, 42, .4);
+  padding: 1.8rem 0 0;
+}
+.coach-qa-card .q {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: var(--w-bold);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  color: var(--color-dark);
+}
+.coach-qa-card .a {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--color-mid);
+  margin: 0;
+}
+
+/* Outcomes — 4 cards of what changes after 8 weeks */
+.coach-outcomes {
+  padding: 5rem 0;
+  background: var(--color-cream);
+}
+.coach-section-head {
+  max-width: 44rem;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.coach-section-head .eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.coach-section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: var(--w-bold);
+  line-height: 1.35;
+  letter-spacing: .02em;
+  margin: 0;
+}
+.coach-outcomes-grid {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.4rem;
+}
+.coach-outcome {
+  padding: 2.2rem 2rem 2.3rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-cream-dark);
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+.coach-outcome-num {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.coach-outcome h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: var(--w-bold);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-dark);
+}
+.coach-outcome p {
+  margin: 0;
+  color: var(--color-mid);
+  font-size: .97rem;
+  line-height: 1.85;
+}
+.coach-outcome p + p { margin-top: .6rem; }
+
+/* Week-by-week spine — the heart of the page */
+.coach-weeks {
+  padding: 5rem 0 6rem;
+  background: var(--color-clay-deep);
+  color: var(--color-cream);
+}
+.coach-weeks .coach-section-head h2 { color: var(--color-cream); }
+.coach-weeks .coach-section-head .eyebrow { color: rgba(245, 237, 227, .7); }
+.coach-weeks .coach-section-head p {
+  color: rgba(245, 237, 227, .78);
+  margin: 1rem 0 0;
+  line-height: 1.8;
+}
+.coach-weeks-table {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.coach-week {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .4rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(245, 237, 227, .18);
+}
+.coach-week:last-child { border-bottom: 1px solid rgba(245, 237, 227, .18); }
+.coach-week-num {
+  font-family: var(--font-accent);
+  font-size: .78rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.coach-week-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.6vw, 1.45rem);
+  font-weight: var(--w-bold);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-cream);
+}
+.coach-week-take {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(245, 237, 227, .82);
+}
+.coach-week-take::before {
+  content: "→";
+  display: inline-block;
+  margin-right: .55rem;
+  color: var(--color-primary);
+}
+
+/* Inclusions — 6 tiles */
+.coach-includes {
+  padding: 5rem 0;
+  background: var(--color-cream);
+}
+.coach-includes-grid {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+.coach-include {
+  padding: 2rem 1.8rem;
+  background: transparent;
+  border: 1px solid rgba(122, 74, 42, .28);
+  display: grid;
+  gap: .6rem;
+  align-content: start;
+}
+.coach-include h3 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-dark);
+}
+.coach-include h3 .star {
+  color: var(--color-primary);
+  margin-right: .4rem;
+}
+.coach-include p {
+  margin: 0;
+  color: var(--color-mid);
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+/* Fit — two column contrast */
+.coach-fit {
+  padding: 5rem 0;
+  background: var(--color-cream-dark);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.coach-fit-grid {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.8rem;
+}
+.coach-fit-col {
+  padding: 2.2rem 1.8rem 2.4rem;
+  background: var(--color-cream);
+  border: 1px solid var(--color-cream-dark);
+}
+.coach-fit-col--no { border-top: 2px solid var(--color-mid); }
+.coach-fit-col--yes { border-top: 2px solid var(--color-primary); background: var(--color-white); }
+.coach-fit-kicker {
+  font-family: var(--font-accent);
+  font-size: .72rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--color-mid);
+  display: block;
+  margin-bottom: .6rem;
+}
+.coach-fit-col--yes .coach-fit-kicker { color: var(--color-primary); }
+.coach-fit-col h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: var(--w-bold);
+  line-height: 1.5;
+  margin: 0 0 1.6rem;
+  color: var(--color-dark);
+}
+.coach-fit-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.coach-fit-col li {
+  padding: .9rem 0 .9rem 1.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: .98rem;
+  line-height: 1.75;
+  color: var(--color-dark);
+}
+.coach-fit-col li:last-child { border-bottom: 0; }
+.coach-fit-col--no li { color: var(--color-mid); }
+.coach-fit-col--no li::before {
+  content: "×";
+  position: absolute; left: 0;
+  color: var(--color-mid);
+  font-size: 1.1rem;
+  top: .9rem;
+  font-family: var(--font-accent);
+}
+.coach-fit-col--yes li::before {
+  content: "✦";
+  position: absolute; left: 0;
+  color: var(--color-primary);
+  font-size: .78rem;
+  top: 1.1rem;
+}
+
+/* Investment */
+.coach-invest {
+  padding: 6rem 1.5rem;
+  background: var(--color-clay-deep);
+  color: var(--color-cream);
+  text-align: center;
+}
+.coach-invest .eyebrow {
+  color: rgba(245, 237, 227, .6);
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+.coach-invest-price {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: clamp(3.2rem, 10vw, 5.6rem);
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: -.01em;
+  margin: 0 0 .4rem;
+}
+.coach-invest-term {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: rgba(245, 237, 227, .78);
+  margin: 0 0 3rem;
+}
+.coach-invest-copy {
+  max-width: 36rem;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  line-height: 1.85;
+  color: rgba(245, 237, 227, .88);
+}
+.coach-invest-copy p { margin: 0 0 1.2rem; }
+.coach-invest-copy p:last-child { margin-bottom: 0; }
+.coach-invest-rule {
+  width: 40px; height: 1px;
+  background: var(--color-primary);
+  margin: 2.4rem auto;
+  border: 0;
+  opacity: .6;
+}
+
+/* Closing narrative + CTA */
+.coach-close {
+  padding: 5rem 1.5rem 5.5rem;
+  background: var(--color-cream);
+  text-align: center;
+}
+.coach-close-inner {
+  max-width: 38rem;
+  margin: 0 auto;
+}
+.coach-close p {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  line-height: 1.85;
+  color: var(--color-dark);
+}
+.coach-close p.accent { color: var(--color-primary); }
+
+.coach-cta {
+  padding: 5rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-cream);
+  text-align: center;
+}
+.coach-cta-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+.coach-cta .eyebrow {
+  color: rgba(245, 237, 227, .82);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.coach-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: var(--w-bold);
+  line-height: 1.4;
+  margin: 0 0 1.4rem;
+  color: var(--color-cream);
+}
+.coach-cta p {
+  color: rgba(245, 237, 227, .9);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  line-height: 1.85;
+  margin: 0 0 2.4rem;
+}
+.coach-cta-actions {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .8rem;
+  align-items: stretch;
+}
+.coach-cta-actions .btn {
+  min-height: 3.2rem;
+  padding: 1rem 1.6rem;
+  font-size: 1.05rem;
+}
+.coach-cta-note {
+  margin-top: 2.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px dashed rgba(245, 237, 227, .35);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: .95rem;
+  color: rgba(245, 237, 227, .72);
+  line-height: 1.7;
+}
+
+/* Desktop */
+@media (min-width: 48rem) {
+  .coach-narrative { padding: 6rem 1.5rem; }
+  .coach-qa-grid { grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
+  .coach-outcomes-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+  .coach-outcome { padding: 2.6rem 2.4rem; }
+  .coach-week {
+    grid-template-columns: 7rem 1fr 1.4fr;
+    gap: 2.4rem;
+    padding: 2.2rem 0;
+    align-items: baseline;
+  }
+  .coach-week-num { align-self: start; padding-top: .25rem; }
+  .coach-includes-grid { grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .coach-fit-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .coach-fit-col { padding: 2.8rem 2.4rem; }
+  .coach-cta-actions { flex-direction: row; justify-content: center; }
+}

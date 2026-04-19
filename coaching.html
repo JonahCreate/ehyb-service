@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>八週品牌陪跑 · 這就是品牌</title>
+<meta name="description" content="八週一對一品牌陪跑。把你已經有的東西整理清楚，讓對的人認出你。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="coaching.css">
+</head>
+<body id="top" class="coach-page">
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/SiteNav.jsx"></script>
+<script type="text/babel" src="components/Footer.jsx"></script>
+
+<script type="text/babel" data-presets="env,react">
+  const R = ({children}) => (
+    <div className="coach-narrative">
+      {children.map((line, i) => (
+        <React.Fragment key={i}>
+          {line === '---' ? <hr className="coach-rule" aria-hidden="true"/> :
+           typeof line === 'string' ? <p>{line.split('\n').map((s, j) => (
+             <React.Fragment key={j}>{j>0 && <br/>}{s}</React.Fragment>
+           ))}</p> :
+           line}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+
+  function Hero() {
+    return (
+      <section className="coach-hero" id="top">
+        <span className="coach-hero-pencil" aria-hidden="true">✎</span>
+        <p className="coach-hero-glyph" aria-hidden="true">陪跑</p>
+        <div className="coach-hero-inner">
+          <p className="eyebrow eyebrow--on-primary">8-Week Brand Coaching <i style={{fontStyle:'normal',marginLeft:'.4rem'}}>✎</i></p>
+          <h1>不是課程。<br/>是八週有人<em>陪著你</em>。</h1>
+          <p className="coach-hero-sub">
+            把你已經有的故事、人設、經驗，<br/>
+            整理成同一個方向說話。<br/>
+            讓對的人，一眼認出你。
+          </p>
+          <dl className="coach-hero-meta">
+            <div><dt>Duration</dt><dd>八週 · 8 Weeks</dd></div>
+            <div><dt>Format</dt><dd>1:1 策略通話</dd></div>
+            <div><dt>Investment</dt><dd>NTD 25,000</dd></div>
+          </dl>
+        </div>
+      </section>
+    );
+  }
+
+  function OpeningNarrative() {
+    return (
+      <R>{[
+        <p className="lead" key="l1">你可能有過這種經驗。</p>,
+        '發了一篇內容，終於爆紅了。\n那幾天一直在刷通知。',
+        '然後等了兩天、三天。',
+        '沒有詢問。沒有人問怎麼合作。\n沒有人問你在賣什麼。',
+        '流量是來了。\n但留下來的，只有數字。',
+        '---',
+        '你去問身邊認識你的人——你的品牌給他們什麼感覺、你跟別人有什麼不同。',
+        '他們想了一下。\n說不太出來。',
+        '那個當下你才意識到：很多人看見了你，但沒有人真的記得你是誰、你在幫誰、為什麼要找你。',
+        '---',
+        '你想要的其實很清楚。',
+        '你想要那些真正需要你的人，一看到你就知道要選你。',
+        '你想做自己，同時讓對的人願意掏錢。',
+        '只是你品牌的精髓散落一地，還沒有找到一條線串起來。',
+      ]}</R>
+    );
+  }
+
+  function CairongQuote() {
+    return (
+      <section className="coach-quote coach-quote--orange">
+        <blockquote>原來我的品牌核心這麼清楚。我一直以為大家會因為外觀款式來買，但其實真正會被吸引的，是那些在生活裡很努力、覺得自己需要一點小小外界助力的人。</blockquote>
+        <cite>— CaiRong，手作水晶飾品品牌</cite>
+      </section>
+    );
+  }
+
+  function MidNarrative() {
+    return (
+      <R>{[
+        '你找人拍影片。\n做行銷。\n研究平台規則。',
+        '有些有效。整體來說，那個差距還在。',
+        '---',
+        '問題不在你做得不夠多。',
+        '而是在你已經有的那些東西——你的故事、你的視角、你走過的路——還沒有被整理成同一個方向說話。',
+        '---',
+        '還有一件事。',
+        '在台灣做品牌，有一個沒人放在檯面上講的壓力。',
+        '你說的每一句話，都可能被拿出來批評。\n立場鮮明，就等著被酸。',
+        '所以很多人慢慢開始說安全的話。\n模糊自己。\n不想得罪任何人。',
+        '但你心裡清楚，那不是你真正的樣子。',
+        '---',
+        '然後你看到市場上有人在做類似的事。',
+        '第一個念頭：我現在做還來得及嗎？\n第二個念頭：我跟他們有什麼不同？',
+        '---',
+        '我想告訴你一件事。',
+        '有一萬個人做跟你類似的事，背後就有一百萬種不同的需求。',
+        '你不需要比別人新穎。',
+        '你需要的，是讓跟你同頻的人找到你。',
+        '他們現在找不到你，不是因為你不存在。\n是因為你還沒說清楚自己是誰。',
+        '---',
+        '我的初衷，不是要幫你找出新的特色。',
+        '你的故事、你的人設、你的人生經驗。\n這些你都已經有了。',
+        '只是現在它們還是分開的。',
+        '---',
+        '大多數人幫你做的事，是給你更多工具。',
+        '我想做的，是幫你找到那條把所有東西串起來的線。',
+        '找到了，你說話的方式會變。\n吸引來的人會變。\n對方聽完你說話之後的感覺，也會變。',
+        <p className="lead" key="close" style={{color:'var(--color-primary)',textAlign:'left'}}>不是你變了。<br/>是你終於被「正確地」理解了。</p>,
+      ]}</R>
+    );
+  }
+
+  function ThreeQA() {
+    const items = [
+      ['如果你已經找人代操了，\n是不是就不用學這個了？',
+       '行銷幫你放大訊息。但如果訊息還沒整理清楚，放大的只是混亂。'],
+      ['我已經有流量了，\n還需要這個嗎？',
+       '有流量，代表有人看見你。但看見你，跟理解你是兩件事。'],
+      ['我已經有人設了，\n還需要這個嗎？',
+       '並不是要你重新定位。只是要把你沒注意到自己的特色，變成你的買家會更容易理解的方式。'],
+    ];
+    return (
+      <section className="coach-qa">
+        <div className="coach-qa-head">
+          <p className="eyebrow">三個最常被問的問題</p>
+          <h2>你可能會想⋯⋯</h2>
+        </div>
+        <div className="coach-qa-grid">
+          {items.map(([q, a], i) => (
+            <div className="coach-qa-card" key={i}>
+              <p className="q">{q.split('\n').map((s,j) => <React.Fragment key={j}>{j>0 && <br/>}{s}</React.Fragment>)}</p>
+              <p className="a">{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  function JillQuote() {
+    return (
+      <section className="coach-quote coach-quote--cream">
+        <blockquote>就像在黑夜中跋山涉水的路上，一直都能看見光。最後收穫了做品牌這件事情的平靜心態和底氣。知道自己現在在哪裡，未來又要去哪裡。</blockquote>
+        <cite>— Jill，穿搭顧問品牌</cite>
+      </section>
+    );
+  }
+
+  function Outcomes() {
+    const cards = [
+      ['01', '你會知道自己在幫誰。',
+       ['不是一個 TA 描述，是一個真實存在的人。',
+        '你知道她早上起來在想什麼，她買東西之前在猶豫什麼，她看到你的內容會有什麼感覺。',
+        '懂她的人，她不會輕易離開。這群人是你品牌最重要的資產，是你的村莊。']],
+      ['02', '你做自己的樣子，\n會開始幫你帶來轉單。',
+       ['八週之後你會更清楚，怎麼讓這個樣子被對的人看見。',
+        '她們看見你，她們喜歡你，她們掏錢。']],
+      ['03', '你會開始發現自己的思維盲區。',
+       ['那些答案其實一直在你面前。',
+        '你有故事、你有人設、你有真實的人生經驗。',
+        '我的工作是幫你看清楚它們在哪裡，怎麼用，為什麼有效。然後你自己也會開始看見。']],
+      ['04', '你會知道為什麼有人應該選你。',
+       ['你能說清楚你是什麼品牌，你幫助的是什麼樣的人，還有她們為什麼會選你。',
+        '價格不適合的人離開沒關係。懂你價值的人，會留下來。']],
+    ];
+    return (
+      <section className="coach-outcomes">
+        <div className="coach-section-head">
+          <p className="eyebrow">After 8 weeks</p>
+          <h2>八週之後，<br/>你的品牌會如何升級？</h2>
+        </div>
+        <div className="coach-outcomes-grid">
+          {cards.map(([n, title, paras]) => (
+            <article className="coach-outcome" key={n}>
+              <span className="coach-outcome-num">{n}</span>
+              <h3>{title.split('\n').map((s,j) => <React.Fragment key={j}>{j>0 && <br/>}{s}</React.Fragment>)}</h3>
+              <div>
+                {paras.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  function Weeks() {
+    const weeks = [
+      ['01', '先停下來，好好看見真實的自己', '第一次看清楚自己的品牌現在在說什麼、真正吸引到的是什麼人'],
+      ['02', '擺脫模糊的品牌', '知道什麼叫做「說出效益」，看得懂好文案和爛文案的差別在哪裡'],
+      ['03', '一句入魂', '能用自己的產品說出一句有畫面感的話，不再只是描述功能'],
+      ['04', '正式成為一個品牌', '有一個夠用的定位版本，知道自己在幫誰、幫什麼、為什麼有效'],
+      ['05', '讀懂買家的心思', '看得懂買家現在在哪個階段，知道什麼時候說話、什麼時候等'],
+      ['06', '陌生客探索', '知道去哪裡找到真正需要自己的人，不只靠搜尋欄'],
+      ['07', '從互動到成交', '知道怎麼從互動走到對話，從對話走到對方主動詢問'],
+      ['08', '這就是品牌的新起點', '定位比進來時更精準，手上有一份接下來三個月的行動方向'],
+    ];
+    return (
+      <section className="coach-weeks" id="weeks">
+        <div className="coach-section-head">
+          <p className="eyebrow">The 8-week map</p>
+          <h2>八週，你會走過這些。</h2>
+          <p>一週一個主題，每天一個小作業。<br/>週五回頭看週一寫的，你會不敢相信那是五天前的自己。</p>
+        </div>
+        <div className="coach-weeks-table">
+          {weeks.map(([n, title, take]) => (
+            <div className="coach-week" key={n}>
+              <span className="coach-week-num">Week {n}</span>
+              <h3 className="coach-week-title">{title}</h3>
+              <p className="coach-week-take">{take}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  function Includes() {
+    const items = [
+      ['每週一次 30 分鐘 1:1 策略通話',
+       '你掛掉電話的那一刻，你會知道這週要做什麼，為什麼做，做完會發生什麼事。'],
+      ['每天一個小作業，五天',
+       '週五你回頭看週一寫的東西，你會不敢相信那是你五天前的想法。'],
+      ['工作日 LINE 即時支援，24 小時內回覆',
+       '你在咖啡廳突然想通了一件事，你不需要一個人悶著，你可以馬上說出來。'],
+      ['專屬 Notion 學員空間',
+       '八週之後你打開它，裡面裝的是一個你花了八週才看清楚的自己。'],
+      ['每週一份對應當週主軸的學習資源',
+       '你讀完的當下會想：原來我上週卡住的那個地方，是這個原因。'],
+      ['會議錄影與摘要，永久保留',
+       '六個月後你拿出來看，你會想起那個第一次說清楚自己是誰的時刻。'],
+    ];
+    return (
+      <section className="coach-includes">
+        <div className="coach-section-head">
+          <p className="eyebrow">What's included</p>
+          <h2>這套陪跑包含什麼</h2>
+        </div>
+        <div className="coach-includes-grid">
+          {items.map(([t, d], i) => (
+            <article className="coach-include" key={i}>
+              <h3><span className="star" aria-hidden="true">✦</span>{t}</h3>
+              <p>{d}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  function Fit() {
+    const no = [
+      '你來這裡主要是想要更多流量、更多粉絲、更快爆紅。',
+      '你想要有人直接告訴你照這樣做就對了。',
+      '你覺得自己的品牌定位已經夠清楚了，只是還沒有人幫你執行。',
+    ];
+    const yes = [
+      '你做了很多，結果卻一直沒到你心裡要的那個地方，你開始懷疑問題出在哪裡。',
+      '你有自己的故事、自己的風格、自己的想法，但每次有人問你在做什麼，你說出來的答案連你自己都不滿意。',
+      '你想要成為那種一開口就讓人想繼續聽的人。同行看到你在做的事，會開始問自己為什麼沒有想到。',
+      '你想要的不只是轉單，是那些真正懂你價值的人主動找上你，然後她們一進來就不想離開。',
+      '你準備好把自己真正搞清楚，然後讓對的人認出你。',
+    ];
+    return (
+      <section className="coach-fit">
+        <div className="coach-section-head">
+          <p className="eyebrow">Who this is for</p>
+          <h2>誠實說⋯⋯</h2>
+        </div>
+        <div className="coach-fit-grid">
+          <div className="coach-fit-col coach-fit-col--no">
+            <span className="coach-fit-kicker">Not for you</span>
+            <h3>如果你是這種人，<br/>這個陪跑就「不適合你」。</h3>
+            <ul>{no.map((t, i) => <li key={i}>{t}</li>)}</ul>
+          </div>
+          <div className="coach-fit-col coach-fit-col--yes">
+            <span className="coach-fit-kicker">Right fit</span>
+            <h3>如果你是這種人，<br/>這個陪跑就「很適合你」。</h3>
+            <ul>{yes.map((t, i) => <li key={i}>{t}</li>)}</ul>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function JingjingQuote() {
+    return (
+      <section className="coach-quote coach-quote--dark">
+        <blockquote>照著步驟執行每一項任務，一定會有成績，也對自己更有信心。慢慢發現真的會被追蹤和關注，也成功結單。</blockquote>
+        <cite>— JingJing，手作水晶品牌</cite>
+      </section>
+    );
+  }
+
+  function Investment() {
+    return (
+      <section className="coach-invest" id="investment">
+        <p className="eyebrow eyebrow--on-dark">Investment</p>
+        <p className="coach-invest-price">NTD 25,000</p>
+        <p className="coach-invest-term">八週 · 1:1 深度陪跑</p>
+        <hr className="coach-invest-rule" aria-hidden="true"/>
+        <div className="coach-invest-copy">
+          <p>你現在花在找人代操、做行銷、研究平台的錢，每個月加起來是多少？</p>
+          <p>那些錢，幫你走到你要的地方了嗎？</p>
+          <p>如果沒有，那個差距每拖一個月，你付出的代價不只是錢。是時間，是機會，是那些本來應該找到你的人，因為找不到你，轉身去找別人了。</p>
+        </div>
+      </section>
+    );
+  }
+
+  function ClosingNarrative() {
+    return (
+      <section className="coach-close">
+        <div className="coach-close-inner">
+          <p>你想要的那個畫面其實很清楚。</p>
+          <p>有人第一次看到你，就知道你是誰、<br/>你在幫誰、為什麼要選你。</p>
+          <p>她們來找你，不是因為你比別人便宜。<br/>是因為她們覺得，你就是那個懂她們的人。</p>
+          <hr className="coach-rule" aria-hidden="true"/>
+          <p className="accent">這八週你買的，就是這件事。</p>
+          <p>把你已經有的東西整理清楚，<br/>讓對的人認出你，<br/>讓她們心裡說「就是她了」。</p>
+          <p>搞清楚了，你做的每一個決定都會不一樣。吸引來的人會不一樣。建立的信任會不一樣。</p>
+        </div>
+      </section>
+    );
+  }
+
+  function CTA() {
+    return (
+      <section className="coach-cta" id="start">
+        <div className="coach-cta-inner">
+          <p className="eyebrow eyebrow--on-primary">How to start</p>
+          <h2>現在怎麼開始。</h2>
+          <p>
+            每個月能深度陪跑的學員有限。<br/>
+            不是製造稀缺，是我確認適合之後才會開始，這樣對你才公平。
+          </p>
+          <p style={{marginBottom:'2.4rem'}}>
+            傳訊息給我，告訴我你現在最困住的一件事是什麼。<br/>
+            我會跟你聊聊，確認我們適不適合一起工作。<br/>
+            <span style={{opacity:.78}}>不是銷售流程。是一次真正的對話。</span>
+          </p>
+          <div className="coach-cta-actions">
+            <a className="btn btn-on-primary-filled" href="#">LINE 私訊我 →</a>
+            <a className="btn btn-on-primary-outline" href="mailto:gj.marketing0116@gmail.com">
+              gj.marketing0116@gmail.com
+            </a>
+          </div>
+          <p className="coach-cta-note">
+            ✎ 目前同時陪跑的學員有限額。<br/>
+            確認適合之後，我們才會正式開始。
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  function App() {
+    return (
+      <React.Fragment>
+        <SiteNav active="coaching" onDark={true}/>
+        <main>
+          <Hero/>
+          <OpeningNarrative/>
+          <CairongQuote/>
+          <MidNarrative/>
+          <ThreeQA/>
+          <JillQuote/>
+          <Outcomes/>
+          <Weeks/>
+          <Includes/>
+          <Fit/>
+          <JingjingQuote/>
+          <Investment/>
+          <ClosingNarrative/>
+          <CTA/>
+        </main>
+        <Footer/>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

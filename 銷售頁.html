@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八週品牌陪跑｜這就是品牌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8521A;
+    --black: #1A1A1A;
+    --cream: #F5F0E8;
+    --white: #FFFFFF;
+    --gray: #888888;
+    --border: #E0D8CC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--black); text-decoration: none;
+  }
+  .nav-cta {
+    background: var(--orange); color: var(--white);
+    padding: 10px 24px; font-size: 13px; font-weight: 500;
+    letter-spacing: 0.05em; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+  .hero {
+    background: var(--orange);
+    padding: 140px 48px 100px;
+    position: relative; overflow: hidden;
+  }
+  .hero-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(48px, 7vw, 88px); font-weight: 900;
+    color: var(--white); line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 32px; max-width: 720px;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-sub {
+    font-size: 16px; color: rgba(255,255,255,0.85);
+    max-width: 480px; line-height: 1.9; margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-cta {
+    display: inline-block; background: var(--white); color: var(--orange);
+    padding: 16px 36px; font-size: 14px; font-weight: 700;
+    letter-spacing: 0.05em; text-decoration: none;
+    transition: transform 0.2s;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-cta:hover { transform: translateY(-2px); }
+  .hero-note { margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
+  .hero-bg-text {
+    position: absolute; right: -20px; bottom: -40px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(120px, 20vw, 240px); font-weight: 900;
+    color: rgba(255,255,255,0.08); line-height: 1;
+    pointer-events: none; user-select: none;
+  }
+  section { padding: 96px 48px; }
+  .section-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 24px;
+  }
+  .pain { background: var(--black); color: var(--white); }
+  .pain h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(32px, 5vw, 56px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 48px; max-width: 600px;
+  }
+  .pain-body { max-width: 680px; }
+  .pain-body p { font-size: 17px; line-height: 2; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+  .pain-body p.indent {
+    padding-left: 24px; border-left: 2px solid var(--orange);
+    color: rgba(255,255,255,0.65);
+  }
+  .pain-body .big-line {
+    margin-top: 32px; font-family: 'Noto Serif TC', serif;
+    font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.7;
+  }
+  .testimonial { background: var(--orange); padding: 72px 48px; }
+  .testimonial blockquote {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(18px, 2.5vw, 26px); font-weight: 700;
+    color: var(--white); line-height: 1.7; max-width: 720px;
+    margin-bottom: 24px; position: relative; padding-left: 20px;
+  }
+  .testimonial blockquote::before {
+    content: '"'; font-size: 80px; line-height: 1;
+    color: rgba(255,255,255,0.2); position: absolute;
+    top: -20px; left: -16px; font-family: Georgia, serif;
+  }
+  .testimonial cite { font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 0.1em; font-style: normal; }
+  .methods { background: var(--cream); }
+  .methods h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 48px; max-width: 560px;
+  }
+  .methods-body { max-width: 680px; }
+  .methods-body p { font-size: 17px; line-height: 2; margin-bottom: 20px; color: #333; }
+  .callout {
+    padding: 28px 32px; border-left: 3px solid var(--orange);
+    background: rgba(232,82,26,0.06); margin: 32px 0;
+    font-size: 16px; line-height: 1.9; color: #333;
+  }
+  .positioning { background: var(--black); color: var(--white); }
+  .positioning h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 48px; max-width: 600px;
+  }
+  .positioning p { font-size: 17px; line-height: 2; color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: 20px; }
+  .positioning .big-statement {
+    margin-top: 40px; font-family: 'Noto Serif TC', serif;
+    font-size: clamp(22px,3vw,32px); font-weight: 900;
+    color: var(--white); line-height: 1.5;
+  }
+  .positioning .big-statement span { color: var(--orange); }
+  .objections { background: var(--cream); padding: 72px 48px; }
+  .objection-card {
+    border: 1px solid var(--border); padding: 32px;
+    margin-bottom: 16px; max-width: 680px;
+  }
+  .objection-q {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--gray); margin-bottom: 16px; text-transform: uppercase;
+  }
+  .objection-a { font-size: 17px; line-height: 1.9; color: var(--black); }
+  .testimonial-mid {
+    background: var(--cream); padding: 72px 48px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .testimonial-mid blockquote {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(18px, 2.5vw, 24px); font-weight: 700;
+    color: var(--black); line-height: 1.8; max-width: 680px; margin-bottom: 20px;
+  }
+  .testimonial-mid cite { font-size: 13px; color: var(--gray); letter-spacing: 0.08em; font-style: normal; }
+  .outcomes { background: var(--black); color: var(--white); }
+  .outcomes h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 64px; max-width: 600px;
+  }
+  .outcome-item {
+    max-width: 680px; margin-bottom: 56px; padding-bottom: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .outcome-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .outcome-item h3 {
+    font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 700;
+    color: var(--orange); margin-bottom: 20px;
+  }
+  .outcome-item p { font-size: 16px; line-height: 2; color: rgba(255,255,255,0.8); margin-bottom: 16px; }
+  .process { background: var(--cream); }
+  .process h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 64px; max-width: 600px;
+  }
+  .week-block {
+    max-width: 780px; margin-bottom: 64px;
+    display: grid; grid-template-columns: 120px 1fr; gap: 0 40px;
+  }
+  .week-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); padding-top: 4px;
+  }
+  .week-content h3 { font-family: 'Noto Serif TC', serif; font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+  .week-content p { font-size: 16px; line-height: 2; color: #444; margin-bottom: 16px; }
+  .deliverables { margin-top: 24px; list-style: none; }
+  .deliverables li {
+    font-size: 15px; line-height: 1.7; padding: 16px 0;
+    border-top: 1px solid var(--border); color: #333;
+  }
+  .deliverables li strong { color: var(--black); display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .includes { background: var(--black); color: var(--white); }
+  .includes h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 64px;
+  }
+  .include-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px; max-width: 900px;
+  }
+  .include-item {
+    background: rgba(255,255,255,0.04); padding: 32px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .include-item h3 { font-size: 15px; font-weight: 700; color: var(--orange); margin-bottom: 12px; }
+  .include-item p { font-size: 14px; line-height: 1.9; color: rgba(255,255,255,0.65); }
+  .fit { background: var(--cream); }
+  .fit h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(24px, 3.5vw, 40px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 48px;
+  }
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 880px; }
+  .fit-col h3 {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid;
+  }
+  .fit-col.not h3 { color: var(--gray); border-color: var(--gray); }
+  .fit-col.yes h3 { color: var(--orange); border-color: var(--orange); }
+  .fit-col ul { list-style: none; }
+  .fit-col ul li {
+    font-size: 15px; line-height: 1.8; padding: 14px 0;
+    border-bottom: 1px solid var(--border); color: #444;
+  }
+  .testimonial-final { background: var(--orange); padding: 72px 48px; }
+  .testimonial-final blockquote {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(18px, 2.5vw, 26px); font-weight: 700;
+    color: var(--white); line-height: 1.7; max-width: 680px;
+    margin-bottom: 24px; padding-left: 20px; position: relative;
+  }
+  .testimonial-final blockquote::before {
+    content: '"'; font-size: 80px; color: rgba(255,255,255,0.2);
+    position: absolute; top: -20px; left: -16px;
+    font-family: Georgia, serif; line-height: 1;
+  }
+  .testimonial-final cite { font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 0.1em; font-style: normal; }
+  .investment { background: var(--black); color: var(--white); }
+  .investment h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900; margin-bottom: 16px;
+  }
+  .price-tag {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(40px, 6vw, 72px); font-weight: 900;
+    color: var(--orange); line-height: 1; margin-bottom: 8px;
+  }
+  .price-note { font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 56px; }
+  .investment p { font-size: 17px; line-height: 2; color: rgba(255,255,255,0.8); max-width: 640px; margin-bottom: 20px; }
+  .dream-box {
+    background: rgba(255,255,255,0.04); border-left: 3px solid var(--orange);
+    padding: 28px 32px; margin: 48px 0; max-width: 640px;
+  }
+  .dream-box p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+  .dream-box p:last-child { margin-bottom: 0; }
+  .cta-section { background: var(--cream); text-align: center; padding: 100px 48px; }
+  .cta-section h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+    line-height: 1.3; margin-bottom: 24px;
+    max-width: 560px; margin-left: auto; margin-right: auto;
+  }
+  .cta-note { font-size: 16px; color: #555; max-width: 440px; margin: 0 auto 48px; line-height: 1.9; }
+  .cta-urgency { font-size: 13px; color: var(--gray); margin-bottom: 36px; letter-spacing: 0.05em; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+  .btn-primary {
+    background: var(--orange); color: var(--white);
+    padding: 18px 40px; font-size: 15px; font-weight: 700;
+    letter-spacing: 0.05em; text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-secondary {
+    background: transparent; color: var(--black);
+    padding: 18px 40px; font-size: 15px; font-weight: 500;
+    letter-spacing: 0.05em; text-decoration: none;
+    border: 1.5px solid var(--black);
+    transition: background 0.2s, color 0.2s; display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--black); color: var(--white); }
+  .cta-disclaimer { font-size: 12px; color: var(--gray); margin-top: 24px; letter-spacing: 0.03em; }
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.4);
+    padding: 32px 48px; display: flex;
+    justify-content: space-between; align-items: center;
+    font-size: 12px; letter-spacing: 0.05em;
+  }
+  .footer-brand { font-family: 'Noto Serif TC', serif; font-weight: 700; color: rgba(255,255,255,0.6); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    section { padding: 72px 24px; }
+    .hero { padding: 120px 24px 80px; }
+    .testimonial, .testimonial-mid, .testimonial-final, .objections { padding: 56px 24px; }
+    .cta-section { padding: 72px 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .week-block { grid-template-columns: 1fr; gap: 8px; }
+    .include-grid, .fit-grid { grid-template-columns: 1fr; }
+    .hero-bg-text { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">這就是品牌 ✦ EXACTLY HOW YOU BRAND</a>
+  <a href="#cta" class="nav-cta">預約免費對話 →</a>
+</nav>
+
+<section class="hero">
+  <p class="hero-label">品牌陪跑 ✦ 八週</p>
+  <h1>你有料。<br>只是還沒<br>說清楚。</h1>
+  <p class="hero-sub">我們幫你找到那條線，串起你的一切。<br>對的人看到你，一眼就懂。</p>
+  <a href="#cta" class="hero-cta">預約 30 分鐘免費對話 →</a>
+  <p class="hero-note">已服務 100+ 品牌與創作者</p>
+  <div class="hero-bg-text">品牌</div>
+</section>
+
+<section class="pain">
+  <p class="section-label">你現在的狀態</p>
+  <h2>發了一篇內容，終於爆紅了。</h2>
+  <div class="pain-body">
+    <p>那幾天一直在刷通知。</p>
+    <p>然後等了兩天、三天。</p>
+    <p class="indent">沒有詢問。沒有人問怎麼合作。沒有人問你在賣什麼。</p>
+    <p>流量是來了。<br>但留下來的，只有數字。</p>
+    <p>你去問身邊認識你的人——你的品牌給他們什麼感覺、你跟別人有什麼不同。</p>
+    <p>他們想了一下。說不太出來。</p>
+    <p>那個當下你才意識到：很多人看見了你，但沒有人真的記得你是誰、你在幫誰、為什麼要找你。</p>
+    <p class="big-line">你想要的其實很清楚。<br>你想做自己，同時讓對的人願意掏錢。<br>只是你品牌的精髓散落一地，<br>還沒有找到一條線串起來。</p>
+  </div>
+</section>
+
+<div class="testimonial">
+  <blockquote>原來我的品牌核心這麼清楚。我一直以為大家會因為外觀款式來買，但其實真正會被吸引的，是那些在生活裡很努力、覺得自己需要一點小小外界助力的人。</blockquote>
+  <cite>—— CaiRong，手作水晶飾品品牌</cite>
+</div>
+
+<section class="methods">
+  <p class="section-label">你試過的方法</p>
+  <h2>有些有效。<br>整體來說，差距還在。</h2>
+  <div class="methods-body">
+    <p>你找人拍影片。做行銷。研究平台規則。</p>
+    <p>問題不在你做得不夠多。</p>
+    <p>而是在你已經有的那些東西——你的故事、你的視角、你走過的路——還沒有被整理成同一個方向說話。</p>
+    <div class="callout">還有一件事，但很少人敢說出來。在台灣做品牌，你說的每一句話，都可能被拿出來批評。立場鮮明，就等著被酸。所以很多人慢慢學會了說安全的話。模糊自己。你心裡清楚，那不是你真正的樣子。</div>
+    <p style="font-size:18px; font-weight:700;">你不需要比別人新穎。你需要的，是讓跟你同頻的人找到你。</p>
+  </div>
+</section>
+
+<section class="positioning">
+  <p class="section-label">我的初衷</p>
+  <h2>我的初衷，不是要幫你找出新的特色。</h2>
+  <p>你的故事、你的人設、你的人生經驗。</p>
+  <p>這些你都已經有了。只是現在它們還是分開的。</p>
+  <p>大多數人幫你做的事，是給你更多工具。</p>
+  <p>我想做的，是幫你找到那條把所有東西串起來的線。</p>
+  <p>找到了，你說話的方式會變。吸引來的人會變。對方聽完你說話之後的感覺，也會變。</p>
+  <p class="big-statement">不是你變了。<br>是你終於被<span>「正確地」</span>理解了。</p>
+</section>
+
+<div class="objections">
+  <p class="section-label">你可能會想</p>
+  <div class="objection-card">
+    <p class="objection-q">如果我已經找人代操了，是不是就不用學這個了？</p>
+    <p class="objection-a">行銷幫你放大訊息。但如果訊息還沒整理清楚，放大的只是混亂。</p>
+  </div>
+  <div class="objection-card">
+    <p class="objection-q">我已經有流量了，還需要這個嗎？</p>
+    <p class="objection-a">有流量，代表有人看見你。但看見你，跟理解你是兩件事。</p>
+  </div>
+  <div class="objection-card">
+    <p class="objection-q">我已經有人設了，還需要這個嗎？</p>
+    <p class="objection-a">並不是要你重新定位。只是要把你沒注意到自己的特色，變成你的買家會更容易理解的方式。</p>
+  </div>
+</div>
+
+<div class="testimonial-mid">
+  <blockquote>就像在黑夜中跋山涉水的路上，一直都能看見光。最後收穫了做品牌這件事情的平靜心態和底氣。知道自己現在在哪裡，未來又要去哪裡。</blockquote>
+  <cite>—— Jill，穿搭顧問品牌</cite>
+</div>
+
+<section class="outcomes">
+  <p class="section-label">八週之後</p>
+  <h2>八週之後，你的品牌會如何升級？</h2>
+  <div class="outcome-item">
+    <h3>你會知道自己在幫誰。</h3>
+    <p>不是一個TA描述，是一個真實存在的人。你知道她早上起來在想什麼，她買東西之前在猶豫什麼，她看到你的內容會有什麼感覺。</p>
+    <p>你用這份理解去跟她說話，她會覺得你懂她。懂她的人，她不會輕易離開。這群人是你品牌最重要的資產。你在建立的，是你自己的村莊。</p>
+  </div>
+  <div class="outcome-item">
+    <h3>你做自己的樣子，會開始帶來轉單。</h3>
+    <p>你本來就有的那個樣子，終於被正確地放大了。她們看見你，她們喜歡你，她們掏錢。</p>
+  </div>
+  <div class="outcome-item">
+    <h3>你會開始發現自己的思維盲區。</h3>
+    <p>那些答案其實一直在你面前。我的工作是幫你看清楚它們在哪裡，怎麼用，為什麼有效。然後你自己也會開始看見，以後不需要每次都重新摸索。</p>
+  </div>
+  <div class="outcome-item">
+    <h3>你會知道為什麼有人應該選你。</h3>
+    <p>你能說清楚你是什麼品牌，你幫助的是什麼樣的人，還有她們為什麼會選你。價格不適合的人離開沒關係。懂你價值的人，會留下來。</p>
+  </div>
+</section>
+
+<section class="process">
+  <p class="section-label">過程</p>
+  <h2>八週後，你的品牌<br>會如何升級？</h2>
+
+  <div class="week-block">
+    <div class="week-label">第一到三週</div>
+    <div class="week-content">
+      <h3>把你已經有的東西挖出來。</h3>
+      <p>這個階段我們不急著產出。我會問你問題，你回答，我們一起把那些你說不清楚的東西，慢慢整理成你真正想說的樣子。</p>
+      <ul class="deliverables">
+        <li><strong>你的買家會在哪個時刻掏錢給你。</strong>不是猜測，是你真正理解她的生活之後，自己看出來的答案。</li>
+        <li><strong>一個讓陌生人第一次看到你，就能秒懂你在做什麼的說法。</strong>不需要她看完你所有內容才懂你。</li>
+        <li><strong>你跟市場上其他人不一樣的地方，你說得出口。</strong>有人問你「為什麼要選你」，你不會再停頓。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">第四週</div>
+    <div class="week-content">
+      <h3>拿去驗證。</h3>
+      <p>你以為你最了解你的受眾。但當你真正去跟她們對話，你會發現她們在意的東西，跟你以為的不一樣。</p>
+      <ul class="deliverables">
+        <li><strong>你的受眾在哪裡說真心話，你知道去哪裡找。</strong>她們在抱怨什麼、在期待什麼，你會知道去哪裡看到這些原話。</li>
+        <li><strong>怎麼問出她們願意掏錢的真實理由。</strong>不是靠感覺猜，是你學會怎麼問，她們就會告訴你。</li>
+        <li><strong>一句從她們口中挖出來的品牌語言。</strong>她們自己說出來的話，比你想破頭寫出來的任何文案都有效。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">第五到七週</div>
+    <div class="week-content">
+      <h3>把它說出來。</h3>
+      <p>前四週你挖出來的東西，現在要變成你真正會用的語言。</p>
+      <ul class="deliverables">
+        <li><strong>一句讓陌生人第一次聽到你就記住你的話。</strong>你說完，她會想繼續問你。</li>
+        <li><strong>你跟市場上其他人差在哪裡，你說得出口。</strong>具體的，不是「我比較用心」這種說法。</li>
+        <li><strong>一份你自己的品牌手冊。</strong>你以後每次做決定、寫文案、跟人介紹自己，這是你的萬用指南。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">第八週</div>
+    <div class="week-content">
+      <h3>看見自己走了多遠。</h3>
+      <p>這週沒有新內容。我把你第一週的狀態拿出來跟現在對照。你會自己看見，你已經走了多遠。</p>
+      <ul class="deliverables">
+        <li><strong>你終於知道為什麼之前做了那麼多，卻一直沒到你要的那個地方。</strong>你會看見那個一直卡著你的東西是什麼，然後它再也擋不住你。</li>
+        <li><strong>接下來三個月你要先做什麼，為什麼是這個順序。</strong>你離開的時候，手上有一份你自己看了也覺得對的行動路線。</li>
+        <li><strong>你做自己的方式，會開始帶來你真正想幫助的人。</strong>你不需要變成別人，你只需要讓對的人看見你本來就有的樣子。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="includes">
+  <p class="section-label">這套陪跑包含什麼</p>
+  <h2>每一個都是<br>你會用到的東西。</h2>
+  <div class="include-grid">
+    <div class="include-item">
+      <h3>每週 1:1 策略通話 ✦ 30分鐘</h3>
+      <p>你掛掉電話的那一刻，你會知道這週要做什麼，為什麼做，做完會發生什麼事。</p>
+    </div>
+    <div class="include-item">
+      <h3>每天一個小作業 ✦ 五天</h3>
+      <p>週五你回頭看週一寫的東西，你會不敢相信那是你五天前的想法。</p>
+    </div>
+    <div class="include-item">
+      <h3>工作日 LINE 支援 ✦ 24小時回覆</h3>
+      <p>你在咖啡廳突然想通了一件事，你不需要一個人悶著，你可以馬上說出來。</p>
+    </div>
+    <div class="include-item">
+      <h3>專屬 Notion 學員空間</h3>
+      <p>八週之後你打開它，裡面裝的是一個你花了八週才看清楚的自己。</p>
+    </div>
+    <div class="include-item">
+      <h3>每週學習資源 ✦ 對應當週主軸</h3>
+      <p>你讀完的當下會想：原來我上週卡住的那個地方，是這個原因。</p>
+    </div>
+    <div class="include-item">
+      <h3>會議錄影與摘要 ✦ 永久保留</h3>
+      <p>六個月後你拿出來看，你會想起那個第一次說清楚自己是誰的時刻。</p>
+    </div>
+  </div>
+</section>
+
+<section class="fit">
+  <p class="section-label">適合你嗎</p>
+  <div class="fit-grid">
+    <div class="fit-col not">
+      <h3>這個陪跑「不適合你」</h3>
+      <ul>
+        <li>你來主要是想要更多流量、更多粉絲、更快爆紅。</li>
+        <li>你想要有人直接告訴你照這樣做就對了。</li>
+        <li>你覺得自己的品牌定位已經夠清楚了，只是還沒有人幫你執行。</li>
+      </ul>
+    </div>
+    <div class="fit-col yes">
+      <h3>這個陪跑「很適合你」</h3>
+      <ul>
+        <li>你做了很多，結果卻一直沒到你心裡要的那個地方。</li>
+        <li>你有自己的故事、風格、想法，但說出來的答案連你自己都不滿意。</li>
+        <li>你想成為那種一開口就讓人想繼續聽的人。</li>
+        <li>你想要的不只是轉單，是那些真正懂你價值的人主動找上你。</li>
+        <li>你準備好把自己真正搞清楚，然後讓對的人認出你。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="testimonial-final">
+  <blockquote>照著步驟執行每一項任務，一定會有成績，也對自己更有信心。慢慢發現真的會被追蹤和關注，也成功結單。</blockquote>
+  <cite>—— JingJing，手作水晶品牌</cite>
+</div>
+
+<section class="investment">
+  <p class="section-label">投資</p>
+  <h2>NTD</h2>
+  <div class="price-tag">25,000</div>
+  <p class="price-note">八週全程陪跑</p>
+  <p>你現在花在找人代操、做行銷、研究平台的錢，每個月加起來是多少？</p>
+  <p>那些錢，幫你走到你要的地方了嗎？</p>
+  <p>如果沒有，那個差距每拖一個月，你付出的代價不只是錢。是時間，是機會，是那些本來應該找到你的人，因為找不到你，轉身去找別人了。</p>
+  <div class="dream-box">
+    <p>你想要的那個畫面其實很清楚。</p>
+    <p>有人第一次看到你，就知道你是誰、你在幫誰、為什麼要選你。</p>
+    <p>她們來找你，不是因為你比別人便宜。是因為她們覺得，你就是那個懂她們的人。</p>
+  </div>
+  <p>這八週你買的，就是這件事。</p>
+  <p>把你已經有的東西整理清楚，讓對的人認出你，讓她們心裡說「就是她了」。</p>
+  <p>搞清楚了，你做的每一個決定都會不一樣。吸引來的人會不一樣。建立的信任會不一樣。</p>
+</section>
+
+<section class="cta-section" id="cta">
+  <p class="section-label" style="text-align:center;">現在怎麼開始</p>
+  <h2>傳訊息給我，告訴我你現在最困住的一件事是什麼。</h2>
+  <p class="cta-note">我會跟你聊聊，確認我們適不適合一起工作。不是銷售流程。是一次真正的對話。</p>
+  <p class="cta-urgency">每個月能深度陪跑的學員有限。確認適合之後，我們才會正式開始。</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary">LINE 私訊我 →</a>
+    <a href="mailto:gj.marketing0116@gmail.com" class="btn-secondary">寄信給我 →</a>
+  </div>
+  <p class="cta-disclaimer">已服務 100+ 品牌 ✦ 工作日 24 小時內回覆</p>
+</section>
+
+<footer>
+  <span class="footer-brand">這就是品牌 ✦ EXACTLY HOW YOU BRAND</span>
+  <span>© 2025 品牌翻譯工作室. All rights reserved.</span>
+</footer>
+
+</body>
+</html>

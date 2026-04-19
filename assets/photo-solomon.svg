@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#EADFCE"></rect>
+  <circle cx="200" cy="175" r="72" fill="#C8B498"></circle>
+  <path d="M 70 405 Q 200 275 330 405 L 330 500 L 70 500 Z" fill="#C8B498"></path>
+  <text x="200" y="470" font-family="Cormorant Garamond, serif" font-size="14" letter-spacing="3" fill="#7A4A2A" text-anchor="middle">PORTRAIT — SOLOMON</text>
+</svg>

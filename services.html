@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>服務方案 · 這就是品牌</title>
+<meta name="description" content="從免費診斷到八週陪跑，四個方案幫你把自己說清楚。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Services-page specific — keeps the original pricing-page card vocabulary */
+  body { background: var(--color-cream); color: var(--color-dark); }
+
+  .sv2-hero { padding: 5.5rem 0 3.5rem; text-align: center; border-bottom: 1px solid var(--rule-soft); }
+  .sv2-hero .eyebrow { justify-content: center; display: inline-block; }
+  .sv2-hero-title {
+    font-family: var(--font-display);
+    font-weight: var(--w-bold);
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.3;
+    letter-spacing: .02em;
+    margin: 1rem auto 0;
+    max-width: 22ch;
+  }
+  .sv2-hero-em { color: var(--color-primary); }
+  .sv2-hero-divider {
+    width: 40px; height: 1px;
+    background: var(--color-primary);
+    margin: 2rem auto;
+  }
+  .sv2-hero-desc {
+    color: var(--color-mid);
+    font-size: 1.02rem;
+    line-height: 2;
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+  }
+  .sv2-hero-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .7rem;
+    justify-content: center;
+  }
+
+  .sv-services {
+    padding: 4rem 1.5rem 5rem;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+  }
+  .sv-card { background: var(--color-white); border: 1px solid var(--color-cream-dark); padding: 3rem 2.6rem; position: relative; transition: box-shadow .3s ease; }
+  .sv-card:hover { box-shadow: var(--shadow-card-hover); }
+  .sv-span2 { grid-column: span 2; }
+  .sv-card-free { background: var(--color-clay-deep); border-color: var(--color-clay-deep); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+  .sv-card-free .sv-card-content { padding: 3rem 2.6rem; }
+  .sv-card-side { background: var(--color-primary); padding: 3rem 2.6rem; display: flex; flex-direction: column; justify-content: center; }
+  .sv-card-tag { font-family: var(--font-accent); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 1.2rem; display: block; }
+  .sv-card-free .sv-card-tag { color: var(--color-cream); opacity: .7; }
+  .sv-card-title { font-family: var(--font-display); font-size: 1.7rem; font-weight: var(--w-bold); line-height: 1.4; letter-spacing: .02em; margin-bottom: .5rem; color: var(--color-dark); }
+  .sv-card-free .sv-card-title { color: var(--color-cream); font-size: 1.9rem; }
+  .sv-card-price { font-family: var(--font-accent); font-size: 2.2rem; font-weight: 500; color: var(--color-primary); margin: 1.2rem 0 .4rem; letter-spacing: -.01em; }
+  .sv-card-free .sv-card-price { color: var(--color-cream); font-size: 2.8rem; }
+  .sv-card-price-note { font-size: .82rem; color: var(--color-gray); margin-bottom: 1.6rem; }
+  .sv-card-free .sv-card-price-note { color: rgba(245,237,227,.7); }
+  .sv-card-divider { width: 30px; height: 1px; background: var(--color-cream-dark); margin: 0 0 1.6rem; }
+  .sv-card-free .sv-card-divider { background: rgba(245,237,227,.25); }
+  .sv-card-desc { font-size: .95rem; line-height: 1.9; color: var(--ink-body); margin-bottom: 1.6rem; }
+  .sv-card-free .sv-card-desc { color: rgba(245,237,227,.85); }
+  .sv-gets-title { font-family: var(--font-accent); font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--color-mid); margin-bottom: .9rem; display: block; }
+  .sv-card-free .sv-gets-title { color: rgba(245,237,227,.6); }
+  .sv-gets-list { list-style: none; margin: 0 0 1.8rem; padding: 0; }
+  .sv-gets-list li { font-size: .95rem; color: var(--color-dark); padding: .55rem 0 .55rem 1.4rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(26,26,26,.06); }
+  .sv-gets-list li:last-child { border-bottom: none; }
+  .sv-gets-list li::before { content: '✦'; position: absolute; left: 0; color: var(--color-primary); font-size: .7rem; top: .85rem; }
+  .sv-card-free .sv-gets-list li { color: rgba(245,237,227,.88); border-bottom-color: rgba(245,237,227,.1); }
+  .sv-card-free .sv-gets-list li::before { color: var(--color-cream); opacity: .5; }
+  .sv-diff-note { background: rgba(232,84,26,.08); border-left: 3px solid var(--color-primary); padding: .8rem 1rem; font-size: .88rem; color: var(--color-primary); line-height: 1.7; margin-bottom: 1.6rem; }
+  .sv-card-side-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: var(--w-bold); color: var(--color-dark); line-height: 1.4; margin-bottom: 1.4rem; }
+  .sv-card-side-list { list-style: none; padding: 0; margin: 0; }
+  .sv-card-side-list li { font-size: .92rem; color: var(--color-dark); padding: .55rem 0 .55rem 1.4rem; position: relative; border-bottom: 1px solid rgba(26,26,26,.14); line-height: 1.7; }
+  .sv-card-side-list li:last-child { border-bottom: none; }
+  .sv-card-side-list li::before { content: '→'; position: absolute; left: 0; font-size: .85rem; top: .7rem; color: var(--color-dark); }
+  .sv-footnote { font-size: .85rem; color: var(--color-mid); line-height: 1.8; margin: 0; font-family: var(--font-accent); font-style: italic; }
+
+  .sv-ladder { max-width: 1180px; margin: 0 auto 5rem; padding: 0 1.5rem; }
+  .sv-ladder-title { font-family: var(--font-accent); font-size: .78rem; letter-spacing: .3em; text-transform: uppercase; color: var(--color-mid); margin-bottom: 1.6rem; display: block; text-align: center; }
+  .sv-ladder-steps { display: flex; align-items: stretch; background: var(--color-white); border: 1px solid var(--color-cream-dark); overflow: hidden; }
+  .sv-step { flex: 1; padding: 1.8rem 1.6rem; border-right: 1px solid var(--color-cream-dark); position: relative; }
+  .sv-step:last-child { border-right: none; }
+  .sv-step-dark { background: var(--color-clay-deep); }
+  .sv-step-dark .sv-step-num { color: var(--color-primary); }
+  .sv-step-dark .sv-step-name { color: var(--color-cream); }
+  .sv-step-dark .sv-step-price { color: var(--color-primary); }
+  .sv-step-num { font-family: var(--font-accent); font-size: .72rem; letter-spacing: .3em; color: var(--color-primary); text-transform: uppercase; display: block; margin-bottom: .5rem; }
+  .sv-step-name { font-family: var(--font-display); font-size: 1rem; font-weight: var(--w-bold); color: var(--color-dark); display: block; margin-bottom: .5rem; line-height: 1.4; }
+  .sv-step-price { font-family: var(--font-accent); font-size: 1.3rem; font-weight: 500; color: var(--color-primary); }
+  .sv-step-arrow { width: 0; height: 0; border-top: 20px solid transparent; border-bottom: 20px solid transparent; border-left: 12px solid var(--color-cream-dark); flex-shrink: 0; align-self: center; }
+
+  .sv-cta-foot { padding: 4rem 0 5rem; background: var(--color-primary); color: var(--color-cream); text-align: center; }
+  .sv-cta-foot h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: var(--w-bold); margin: 0 0 1rem; color: var(--color-cream); }
+  .sv-cta-foot p { color: rgba(245,237,227,.88); margin: 0 auto 2rem; max-width: 32ch; line-height: 1.8; }
+  .sv-cta-foot .sv-cta-actions { display: inline-flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+
+  @media (max-width: 48rem) {
+    .sv-services { padding: 2.5rem 1rem 3rem; grid-template-columns: 1fr; gap: 1.2rem; }
+    .sv-card { padding: 2rem 1.4rem; }
+    .sv-span2 { grid-column: span 1; }
+    .sv-card-free { grid-template-columns: 1fr; }
+    .sv-card-free .sv-card-content { padding: 2rem 1.4rem; }
+    .sv-card-side { padding: 2rem 1.4rem; }
+    .sv-ladder { padding: 0 1rem; }
+    .sv-ladder-steps { flex-direction: column; }
+    .sv-step { border-right: none; border-bottom: 1px solid var(--color-cream-dark); padding: 1.2rem 1.4rem; }
+    .sv-step-arrow { display: none; }
+  }
+</style>
+</head>
+<body id="top">
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/SiteNav.jsx"></script>
+<script type="text/babel" src="components/Footer.jsx"></script>
+<script type="text/babel" src="components/ServicesHero.jsx"></script>
+<script type="text/babel" src="components/ServiceCard.jsx"></script>
+<script type="text/babel" src="components/ProductLadder.jsx"></script>
+
+<script type="text/babel" data-presets="env,react">
+  function ServicesCTAFoot() {
+    return (
+      <section className="sv-cta-foot" id="booking">
+        <div className="container">
+          <p className="eyebrow eyebrow--on-primary" style={{marginBottom:'.8rem'}}>Still not sure?</p>
+          <h2>不確定哪個方案適合你？</h2>
+          <p>沒關係。先 15 分鐘聊聊，<br/>我直接告訴你現在該做什麼。</p>
+          <div className="sv-cta-actions">
+            <a className="btn btn-on-primary-filled" href="index.html#booking">預約 15 分鐘免費診斷 →</a>
+            <a className="btn btn-on-primary-outline" href="coaching.html">了解八週陪跑</a>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function App() {
+    return (
+      <React.Fragment>
+        <SiteNav active="services" onDark={false}/>
+        <main>
+          <ServicesHero/>
+          <section className="sv-services" id="plans">
+            <ServiceCard
+              variant="dark"
+              extraSpan
+              tag="入口體驗 ✦ 限量名額"
+              title="兩天品牌差異化診斷"
+              price="免費"
+              priceNote="Jonah 邀請制。不是所有人都能進來。"
+              desc={<React.Fragment>兩天。兩次各 30 分鐘的通話。每天一個作業。<br/>不教方法。我問你問題，讓你說清楚自己。<br/>兩天結束，你知道你真正的切入點是什麼。</React.Fragment>}
+              gets={[
+                '找到品牌真正的切入點（不是你以為的那個）',
+                '找到你一直在迴避說的那個觀點',
+                '知道你還有哪些層次沒被整理清楚',
+              ]}
+              side={{
+                title: <React.Fragment>這兩天<br/>會發生什麼</React.Fragment>,
+                items: [
+                  'Day 1 通話：我幫你拆開「切入點」和「終點」',
+                  'Day 1 作業：寫出五個版本的品牌一句話',
+                  'Day 2 通話：我從作業裡找到你在迴避的東西',
+                  'Day 2 作業：寫出你真正相信的立場',
+                ],
+              }}
+            />
+            <ServiceCard
+              tag="單次深度診斷"
+              title={<React.Fragment>品牌診斷<br/>單次諮詢</React.Fragment>}
+              price="NTD 2,000"
+              priceNote="90 分鐘 ✦ 診斷報告隨附"
+              diff="你主動帶著問題來。我在 90 分鐘內幫你看清楚問題真正在哪裡，給你一個可以立刻執行的方向。"
+              gets={[
+                '90 分鐘一對一深度診斷通話',
+                '診斷後的書面摘要報告',
+                '你品牌目前最大的一個盲點',
+                '一個具體的、今天就能執行的下一步',
+                '通話錄音永久保留',
+              ]}
+              footnote="適合：已有一定方向，需要有人快速幫你診斷，找出真正的問題所在。"
+            />
+            <ServiceCard
+              tag="七天密集定位"
+              title={<React.Fragment>一週品牌定位<br/>工作坊</React.Fragment>}
+              price="NTD 3,500"
+              priceNote="升級加購 45 分鐘開頭通話 NTD 4,000"
+              desc="七天。每天一個問題，LINE 傳給我，我直接回你。七天結束，你拿到一份品牌手冊雛形。裡面裝的是你整理清楚之後的自己。"
+              gets={[
+                '五天每日作業 + 工作日 24 小時內回饋',
+                'Day 4 由我提煉 2-3 個定位句讓你選',
+                'Day 6 完整品牌手冊雛形',
+                'Day 7 結尾 30 分鐘通話 + 錄音',
+                '你用自己的話說出來的定位方向',
+              ]}
+            />
+            <ServiceCard
+              extraSpan
+              extraStyle={{background: '#EDE5D8', borderColor: 'rgba(232,82,26,.22)'}}
+              tag="完整品牌建構 ✦ 旗艦方案"
+              title="八週品牌陪跑"
+              price="NTD 25,000"
+              priceNote="八週 ✦ 每週一次策略通話 + 每日作業 + LINE 即時支援"
+              desc={<React.Fragment>不是課程。是八週有人陪著你，一步一步走完從定位到表達到吸引對的人的整條路。<br/><br/>你說話的方式會變。吸引來的人會變。對方聽完你說話之後的感覺，也會變。不是你變了，是你終於被正確理解了。</React.Fragment>}
+              getsTitle="八週包含什麼"
+              gets={[
+                '每週一次 30 分鐘 1:1 策略通話',
+                '每天一個作業，五天，週五看見週一的自己',
+                '工作日 LINE 即時支援，24 小時內回覆',
+                '專屬 Notion 學員空間，永久保留',
+                '每週配套學習資源',
+                '所有會議錄音，永久保留',
+              ]}
+              footnote="八週完整介紹：coaching.html →"
+            />
+          </section>
+          <ProductLadder/>
+          <ServicesCTAFoot/>
+        </main>
+        <Footer/>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

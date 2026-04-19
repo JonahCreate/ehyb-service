@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <rect width="320" height="80" fill="#1A1008"></rect>
+  <g transform="translate(12, 16)">
+    <rect x="0" y="0" width="48" height="48" fill="#E8541A"></rect>
+    <text x="24" y="34" font-family="Noto Serif TC, serif" font-size="30" fill="#F5EDE3" text-anchor="middle">✎</text>
+  </g>
+  <text x="72" y="36" font-family="Noto Serif TC, serif" font-size="20" font-weight="700" fill="#F5EDE3">這就是品牌</text>
+  <text x="72" y="58" font-family="Cormorant Garamond, serif" font-size="11" letter-spacing="2" fill="#E8541A">EXACTLY HOW YOU BRAND</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#EADFCE"></rect>
+  <circle cx="200" cy="185" r="70" fill="#D4C3A8"></circle>
+  <path d="M 80 400 Q 200 280 320 400 L 320 500 L 80 500 Z" fill="#D4C3A8"></path>
+  <text x="200" y="470" font-family="Cormorant Garamond, serif" font-size="14" letter-spacing="3" fill="#7A4A2A" text-anchor="middle">PORTRAIT — JONAH</text>
+</svg>
