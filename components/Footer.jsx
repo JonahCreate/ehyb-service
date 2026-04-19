@@ -23,8 +23,8 @@ function Footer() {
         <div className="footer-contact">
           <p className="footer-nav-title">Contact</p>
           <ul>
-            <li><a href="#">LINE 官方帳號</a></li>
-            <li><a href="mailto:hi@exactlyhowyoubrand.com">hi@exactlyhowyoubrand.com</a></li>
+            <li><a href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener">預約免費諮詢</a></li>
+            <li><a href="mailto:gj.marketing0116@gmail.com">gj.marketing0116@gmail.com</a></li>
             <li>Taipei · Taiwan</li>
           </ul>
         </div>

@@ -18,7 +18,7 @@ function ServicesHero() {
         </p>
         <div className="sv2-hero-actions">
           <a className="btn btn-primary" href="#plans">查看四個方案 ↓</a>
-          <a className="btn btn-outline" href="index.html#booking">先預約 15 分鐘免費診斷</a>
+          <a className="btn btn-outline" href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener">先預約 15 分鐘免費診斷</a>
         </div>
       </div>
     </section>

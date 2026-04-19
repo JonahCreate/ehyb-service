@@ -24,11 +24,11 @@ function Booking() {
           </p>
 
           <div className="booking-actions">
-            <a className="btn btn-on-primary-filled booking-cta-primary" href="#">
+            <a className="btn btn-on-primary-filled booking-cta-primary" href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener">
               預約 15 分鐘免費諮詢 →
             </a>
-            <a className="btn btn-on-primary-outline" href="#">
-              或加入 LINE 官方帳號，慢慢了解我們
+            <a className="btn btn-on-primary-outline" href="mailto:gj.marketing0116@gmail.com">
+              或寄信給我：gj.marketing0116@gmail.com
             </a>
           </div>
         </div>

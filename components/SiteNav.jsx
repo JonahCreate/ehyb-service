@@ -58,7 +58,7 @@ function SiteNav({active, onDark}) {
           <a className="btn btn-outline nav-cta nav-cta--outline" href="services.html">
             服務方案
           </a>
-          <a className="btn btn-primary nav-cta" href={active === 'home' ? '#booking' : 'index.html#booking'}>
+          <a className="btn btn-primary nav-cta" href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener">
             免費診斷 →
           </a>
           <button
@@ -80,7 +80,7 @@ function SiteNav({active, onDark}) {
               onClick={() => setOpen(false)}
             >{lbl}</a>
           ))}
-          <a href={active === 'home' ? '#booking' : 'index.html#booking'} onClick={() => setOpen(false)} className="mobile-menu-cta">
+          <a href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener" onClick={() => setOpen(false)} className="mobile-menu-cta">
             免費診斷 →
           </a>
         </nav>

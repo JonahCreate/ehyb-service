@@ -29,7 +29,7 @@ function Hero({variant = 'classic', glyphWord = '品牌', accent = 'normal'}) {
           </p>
 
           <div className="hero-actions">
-            <a className="btn btn-on-primary-filled hero-cta-primary" href="#booking">
+            <a className="btn btn-on-primary-filled hero-cta-primary" href="https://forms.gle/QeELuB93hB4LD9XC8" target="_blank" rel="noopener">
               預約 15 分鐘免費診斷 →
             </a>
             <a className="btn btn-on-primary-outline" href="services.html">
